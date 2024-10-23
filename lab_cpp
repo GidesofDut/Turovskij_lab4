@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+int main() {
+    const int a=10;
+    int arr[a];
+    cout<<"Enter 10 numbers: ";
+    for(int i=0; i<a; ++i){
+        cin>>arr[i];
+    }
+    for(int i=0; i<a-1; ++i){
+        for(int j=0; j<a-i-1;++j){
+            if(arr[j]<arr[j+1]){
+                int temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+            }
+        }
+    }
+    cout<<"max 3 number: ";
+    for(int i=0; i<3; ++i){
+        cout<<arr[i]<<" ; ";
+    }
+    return 0;
+}
